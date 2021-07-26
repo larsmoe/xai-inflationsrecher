@@ -1,24 +1,23 @@
 import numpy as np
 
-weights = np.array([96.85,
-16.96,
-31.77,
-196.32,
-25.92,
-24.77,
-11.54,
-31.56,
-70.7,
-23.69,
-27.41,
-26.62,
-20.81,
-45.34,
-24.98,
-46.13,
-22.22,
-22.88,
-233.53
+weights = np.array(['Nahrungsmittel und\nalkoholfreie Getränke',
+'Alkoholische\nGetränke',
+'Restaurants, Cafés',
+'Nettokaltmiete',
+'Strom',
+'Gas',
+'Heizöl',
+'Neu- und Ge-\nbrauchtwagenkauf',
+'Kraftstoffe und\nFahrzeugwartung',
+'Öffentl.\nVerkehrsmittel',
+'Freizeit /Kultur',
+'Pauschalreisen',
+'Tabakwaren',
+'Bekleidung\nund Schuhe',
+'Elektrogeräte',
+'Gesundheit',
+'Telekommunikations-\ndienstleistungen',
+'Körperpflege',
+'Rest'
 ])
-print(weights.shape, np.sum(weights))
-np.save('official_weights.npy', weights)
+np.save('categories.npy', weights)
