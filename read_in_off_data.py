@@ -1,5 +1,11 @@
 import numpy as np
 
+print(np.load('official_vpi_june20.npy'))
+print(np.load('official_vpi_june21.npy'))
+print(np.load('official_weights.npy'))
+print(np.sum(np.load('official_weights.npy')))
+'''
+
 weights = np.array(['Nahrungsmittel und\nalkoholfreie Getränke',
 'Alkoholische\nGetränke',
 'Restaurants, Cafés',
@@ -21,3 +27,4 @@ weights = np.array(['Nahrungsmittel und\nalkoholfreie Getränke',
 'Rest'
 ])
 np.save('categories.npy', weights)
+#'''
