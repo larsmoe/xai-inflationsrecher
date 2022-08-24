@@ -50,10 +50,15 @@ def feature_importance(weights, off_weights, vpi_now, vpi_one_year_ago):
 
 def feat_importance_as_derivate(weights, off_weights, vpi_now, vpi_one_year_ago):
     weights = weights / np.sum(weights)
-    off_weights = off_weights / np.sum(weights)
+    off_weights = off_weights / np.sum(off_weights)
     feat_imp = np.zeros(len(weights))
     for i in range(len(weights)):
-        feat_imp[i] = (vpi_now[i] * np.sum(weights*vpi_one_year_ago) - vpi_one_year_ago[i] *np.sum(weights*vpi_now))/np.square(np.sum(weights*vpi_one_year_ago))
+        feat_imp[i] = (vpi_now[i] * np.sum(weights*vpi_one_year_ago) - vpi_one_year_ago[i] * np.sum(weights*vpi_now))/np.square(np.sum(weights*vpi_one_year_ago))
     return feat_imp
+
+def feat_importance_as_intuitive_formula(weights, off_weights, vpi_now, vpi_one_year_ago):
+    weights = weights / np.sum(weights)
+    off_weights = off_weights / np.sum(off_weights)
+    return (weights - off_weights) * (vpi_now/vpi_one_year_ago - calc_inflation(off_weights, vpi_now, vpi_one_year_ago) - 1)
 
 

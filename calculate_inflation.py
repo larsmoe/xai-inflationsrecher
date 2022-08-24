@@ -3,7 +3,7 @@ import time
 
 def calc_inflation(weights, vpi_now, vpi_one_year_ago):
     percentage_weights = weights/np.sum(weights)
-    print(percentage_weights)
+    #print(percentage_weights)
     return (np.round(np.sum(percentage_weights*vpi_now),decimals=1))/np.round((np.sum(percentage_weights*vpi_one_year_ago)),1) - 1
 '''
 off_vpi_june21 = np.load('official_vpi_june21.npy')
